@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositories\\Learning\\RockPaperScissors\\RockPaperScissors\\RockPaperScissors.csproj",
+      "projectUniqueName": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\RockPaperScissors\\RockPaperScissors\\RockPaperScissors.csproj",
       "projectName": "RockPaperScissors",
-      "projectPath": "C:\\Repositories\\Learning\\RockPaperScissors\\RockPaperScissors\\RockPaperScissors.csproj",
+      "projectPath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\RockPaperScissors\\RockPaperScissors\\RockPaperScissors.csproj",
       "packagesPath": "C:\\Users\\tinim\\.nuget\\packages\\",
-      "outputPath": "C:\\Repositories\\Learning\\RockPaperScissors\\RockPaperScissors\\obj\\",
+      "outputPath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\RockPaperScissors\\RockPaperScissors\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tinim\\AppData\\Roaming\\NuGet\\NuGet.Config"

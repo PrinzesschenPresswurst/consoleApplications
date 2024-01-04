@@ -12,3 +12,17 @@ C:\Repositories\Learning\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\re
 C:\Repositories\Learning\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.pdb
 C:\Repositories\Learning\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.genruntimeconfig.cache
 C:\Repositories\Learning\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\ref\RockPaperScissors.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\bin\Debug\net7.0\RockPaperScissors.exe
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\bin\Debug\net7.0\RockPaperScissors.deps.json
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\bin\Debug\net7.0\RockPaperScissors.runtimeconfig.json
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\bin\Debug\net7.0\RockPaperScissors.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\bin\Debug\net7.0\RockPaperScissors.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.AssemblyInfoInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.AssemblyInfo.cs
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\refint\RockPaperScissors.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\RockPaperScissors.genruntimeconfig.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\RockPaperScissors\RockPaperScissors\obj\Debug\net7.0\ref\RockPaperScissors.dll
