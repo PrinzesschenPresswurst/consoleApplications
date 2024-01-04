@@ -12,3 +12,17 @@ C:\Repositories\Learning\Hangman\Hangman\obj\Debug\net7.0\refint\Hangman.dll
 C:\Repositories\Learning\Hangman\Hangman\obj\Debug\net7.0\Hangman.pdb
 C:\Repositories\Learning\Hangman\Hangman\obj\Debug\net7.0\Hangman.genruntimeconfig.cache
 C:\Repositories\Learning\Hangman\Hangman\obj\Debug\net7.0\ref\Hangman.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\bin\Debug\net7.0\Hangman.exe
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\bin\Debug\net7.0\Hangman.deps.json
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\bin\Debug\net7.0\Hangman.runtimeconfig.json
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\bin\Debug\net7.0\Hangman.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\bin\Debug\net7.0\Hangman.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\Hangman.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\Hangman.AssemblyInfoInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\Hangman.AssemblyInfo.cs
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\Hangman.csproj.CoreCompileInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\Hangman.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\refint\Hangman.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\Hangman.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\Hangman.genruntimeconfig.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\Hangman\Hangman\obj\Debug\net7.0\ref\Hangman.dll

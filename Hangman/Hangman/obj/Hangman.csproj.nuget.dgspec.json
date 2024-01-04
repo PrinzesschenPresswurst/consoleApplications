@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repositories\\Learning\\Hangman\\Hangman\\Hangman.csproj": {}
+    "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\Hangman\\Hangman\\Hangman.csproj": {}
   },
   "projects": {
-    "C:\\Repositories\\Learning\\Hangman\\Hangman\\Hangman.csproj": {
+    "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\Hangman\\Hangman\\Hangman.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositories\\Learning\\Hangman\\Hangman\\Hangman.csproj",
+        "projectUniqueName": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\Hangman\\Hangman\\Hangman.csproj",
         "projectName": "Hangman",
-        "projectPath": "C:\\Repositories\\Learning\\Hangman\\Hangman\\Hangman.csproj",
+        "projectPath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\Hangman\\Hangman\\Hangman.csproj",
         "packagesPath": "C:\\Users\\tinim\\.nuget\\packages\\",
-        "outputPath": "C:\\Repositories\\Learning\\Hangman\\Hangman\\obj\\",
+        "outputPath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\Hangman\\Hangman\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tinim\\AppData\\Roaming\\NuGet\\NuGet.Config"
