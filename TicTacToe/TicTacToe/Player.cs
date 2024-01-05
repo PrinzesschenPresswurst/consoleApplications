@@ -1,14 +1,15 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-
-namespace TicTacToe;
+﻿namespace TicTacToe;
 
 public class Player
 {
-    // properties
+    // properties -----------------------------------------------
     public string PlayerName { get; set; }
-    public Game.Symbols PlayerSymbol { get; set; }
+    public Board.Symbols PlayerSymbol { get; set; }
+    
+    
 
-    // constructor
+    // constructor ---------------------------------------------------
+    
     public Player(int playerNumber)
     {
         PlayerName = GetPlayerName(playerNumber);
@@ -16,19 +17,18 @@ public class Player
     }
 
     // methods needed by constructor -----------------------------------
-    private string GetPlayerName(int number)
+    
+    private static string GetPlayerName(int number)
     {
         Console.Write($"Player {number} name: ");
         return Console.ReadLine();
     }
 
-    private Game.Symbols GetPlayerSymbol(int number)
+    private Board.Symbols GetPlayerSymbol(int number)
     {
         if (number == 1)
-        {
-            return Game.Symbols.X;
-        }
-        else return Game.Symbols.O;
+            return Board.Symbols.X;
+        else return Board.Symbols.O;
     }
     
     // methods -------------------------------------------------------------
@@ -55,10 +55,10 @@ public class Player
 
             } while (i < 1 || i > 9);
             
-            if ((game._inputFieldSymbols[i] != Game.Symbols._))
+            if ((Board._inputFieldSymbols[i] != Board.Symbols._))
                 Console.WriteLine("field already taken.");
-        } while (game._inputFieldSymbols[i] != Game.Symbols._);
+        } while (Board._inputFieldSymbols[i] != Board.Symbols._);
         
-        game._inputFieldSymbols[i] = PlayerSymbol;
+        Board._inputFieldSymbols[i] = PlayerSymbol;
     }
 }
