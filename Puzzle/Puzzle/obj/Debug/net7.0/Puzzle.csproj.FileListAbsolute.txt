@@ -1,0 +1,14 @@
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\bin\Debug\net7.0\Puzzle.exe
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\bin\Debug\net7.0\Puzzle.deps.json
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\bin\Debug\net7.0\Puzzle.runtimeconfig.json
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\bin\Debug\net7.0\Puzzle.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\bin\Debug\net7.0\Puzzle.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.AssemblyInfoInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.AssemblyInfo.cs
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.csproj.CoreCompileInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\refint\Puzzle.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.genruntimeconfig.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\ref\Puzzle.dll
