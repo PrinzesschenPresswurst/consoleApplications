@@ -1,0 +1,14 @@
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\bin\Debug\net7.0\FountainOfObjects.exe
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\bin\Debug\net7.0\FountainOfObjects.deps.json
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\bin\Debug\net7.0\FountainOfObjects.runtimeconfig.json
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\bin\Debug\net7.0\FountainOfObjects.dll
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\bin\Debug\net7.0\FountainOfObjects.pdb
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\FountainOfObjects.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\FountainOfObjects.AssemblyInfoInputs.cache
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\FountainOfObjects.AssemblyInfo.cs
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\FountainOfObjects.csproj.CoreCompileInputs.cache
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\FountainOfObjects.dll
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\refint\FountainOfObjects.dll
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\FountainOfObjects.pdb
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\FountainOfObjects.genruntimeconfig.cache
+C:\Repositories\CSharp_Exercises\Learning\FountainOfObjects\FountainOfObjects\obj\Debug\net7.0\ref\FountainOfObjects.dll
