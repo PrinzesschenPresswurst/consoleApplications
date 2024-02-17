@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repositories\\CSharp_Exercises\\Learning\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj": {}
+    "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj": {}
   },
   "projects": {
-    "C:\\Repositories\\CSharp_Exercises\\Learning\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj": {
+    "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositories\\CSharp_Exercises\\Learning\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj",
+        "projectUniqueName": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj",
         "projectName": "FountainOfObjects",
-        "projectPath": "C:\\Repositories\\CSharp_Exercises\\Learning\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj",
+        "projectPath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\FountainOfObjects\\FountainOfObjects\\FountainOfObjects.csproj",
         "packagesPath": "C:\\Users\\tinim\\.nuget\\packages\\",
-        "outputPath": "C:\\Repositories\\CSharp_Exercises\\Learning\\FountainOfObjects\\FountainOfObjects\\obj\\",
+        "outputPath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\FountainOfObjects\\FountainOfObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tinim\\AppData\\Roaming\\NuGet\\NuGet.Config"
