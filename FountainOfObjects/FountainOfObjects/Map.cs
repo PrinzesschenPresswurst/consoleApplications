@@ -2,19 +2,17 @@
 
 public class Map
 {
-    private static int mapRows = 4;
-    private static int mapColumns = 4;
-    private int[,] RoomGrid = new int [mapRows, mapColumns];
+    private static readonly int MapRows = 4;
+    private static readonly int MapColumns = 4;
+    private int[,] RoomGrid { get; set; }= new int [MapRows, MapColumns];
+    private Room[] RoomArray { get; set; } = new Room[16];
     
-    public Room[] RoomArray { get; set; } = new Room[16];
-    public Room StartRoom { get; set; }
-    
-    public Map(Game game)
+    public Map()
     {
         CreateMap();
-        StartRoom = RoomArray[0];
     }
-    public void CreateMap()
+    
+    private void CreateMap()
     {
         int i = 0;
         for (int row = 0; row < RoomGrid.GetLength(0); row ++)
@@ -22,16 +20,17 @@ public class Map
             for (int column = 0; column < RoomGrid.GetLength(1); column++)
             {
                 RoomArray[i] = new Room(row,column);
-                //Console.WriteLine($"room {i}: row:{RoomArray[i].RoomRow}, column:{RoomArray[i].RoomColumn}");
+                //Console.WriteLine($"{RoomArray[i].RoomColumn}, {RoomArray[i].RoomRow}");
                 i++;
             }
         }
     }
 
-    public void DisplayMap(Game game)
+    public void DisplayMap()
     {
         string map = """
             
+            -----------------------------------------
              * FOUNTAIN CAVE MAP *
              
             |     |__________________
@@ -45,21 +44,15 @@ public class Map
             -------------------------
                0     1     2     3
             
-            Magic Word - Oklahoma !!! 
-              
+            Magic Word - Oklahoma !!!
+            
+            ----------------------------------------- 
+            
             """;
-        
-        Console.WriteLine("You open the map the mysterious man gave you:");
-        
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("-----------------------------------------");
         Console.WriteLine(map);
-        Console.WriteLine("-----------------------------------------");
         Console.ForegroundColor = ConsoleColor.White;
-        
-        Console.WriteLine("You take in all information as it is dark in the cave.");
-        Console.WriteLine("Press any key to enter the cave on your quest to find the fountain.");
-        Console.WriteLine($"Good luck, {Game.GamePlayer.Playername}");
+        Console.WriteLine("Press any key to close the map.");
         Console.ReadKey(true);
         Console.Clear();
     }
