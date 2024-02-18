@@ -2,10 +2,10 @@
 
 public class Monster
 {
-    public Room MonsterLocation { get; set; }
+    public Room MonsterLocation { get; set; } = new Room(0,3);
 
-    public Monster()
+    /*public Monster()
     {
-        MonsterLocation = new Room(0,3);
-    }
+        
+    }*/
 }

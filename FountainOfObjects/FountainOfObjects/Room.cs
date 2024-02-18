@@ -47,7 +47,7 @@ public class Room
     
     public string GetRoomText()
     {
-        string response = null;
+        string? response = null;
         
         if (CheckIfHasAdjacentMonster())
         {

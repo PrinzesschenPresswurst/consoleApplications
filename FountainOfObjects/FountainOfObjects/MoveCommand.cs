@@ -47,7 +47,7 @@ public class MoveCommand : IPlayerMoveCommand
             else HandleWalls();
         }
     }
-    private void HandleWalls()
+    private static void HandleWalls()
     {
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("You bump into a cave wall.");
