@@ -65,9 +65,9 @@ public class Player
     {
         if (input == "oklahoma")
             Command = new FountainCommand();
-        if (input == "help")
+        else if (input == "help")
             Command = new HelpCommand();
-        if (input == "map")
+        else if (input == "map")
             Command = new MapCommand();
         else return;
         
