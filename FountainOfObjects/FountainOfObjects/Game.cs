@@ -9,8 +9,8 @@ public class Game
     public Game()
     {
         GameMap = new Map();
-        GamePlayer = new Player(this);
-        GameMonster = new Monster(this);
+        GamePlayer = new Player();
+        GameMonster = new Monster();
         DisplayIntro();
         GameMap.DisplayMap();
     }
