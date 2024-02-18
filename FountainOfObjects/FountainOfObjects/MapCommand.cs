@@ -2,7 +2,7 @@
 
 public class MapCommand : IPlayerCommand
 {
-    public void Execute(Player player)
+    public void Execute()
     {
         if (Game.GamePlayer.CurrentRoom.CheckIfEntrance())
         {

@@ -52,13 +52,13 @@ public class Player
         MoveCommand = new MoveCommand();
         
         if (input == "move east" || input == "e")
-            MoveCommand.Execute(this, "east");
+            MoveCommand.Execute("east");
         if (input == "move west" || input == "w")
-            MoveCommand.Execute(this, "west");
+            MoveCommand.Execute("west");
         if (input == "move north" || input == "n")
-            MoveCommand.Execute(this, "north");
+            MoveCommand.Execute("north");
         if (input == "move south" || input == "s")
-            MoveCommand.Execute(this, "south");
+            MoveCommand.Execute("south");
     }
 
     private void HandleCommand(string? input)
@@ -71,7 +71,7 @@ public class Player
             Command = new MapCommand();
         else return;
         
-        Command.Execute(this);
+        Command.Execute();
     }
 
     private void BackToStart()

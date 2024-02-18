@@ -2,7 +2,7 @@
 
 public class MoveCommand : IPlayerMoveCommand
 {
-    public void Execute(Player player, string direction)
+    public void Execute(string direction)
     {
         if (direction == "east" )
         {

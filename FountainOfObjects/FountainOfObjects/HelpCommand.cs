@@ -2,7 +2,7 @@
 
 public class HelpCommand : IPlayerCommand
 {
-    public void Execute(Player player)
+    public void Execute()
     {
         string help = """
 

@@ -2,7 +2,7 @@
 
 public class FountainCommand : IPlayerCommand
 {
-    public void Execute(Player player)
+    public void Execute()
     {
         if (Game.GamePlayer.CurrentRoom.CheckIfFountain() && !Game.GamePlayer.HasEnabledFountain)
         {
