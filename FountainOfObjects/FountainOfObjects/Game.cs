@@ -2,9 +2,9 @@
 
 public class Game
 {
-    public static Player GamePlayer { get; set; }
-    public static Map GameMap { get; set; }
-    public static Monster GameMonster { get; set; }
+    public static Player GamePlayer { get; set; } 
+    public static Map GameMap { get; set; } 
+    public static Monster GameMonster { get; set; } 
     
     public Game()
     {
@@ -27,7 +27,7 @@ public class Game
         Console.WriteLine(GamePlayer.CurrentRoom.GetRoomText());
         Console.ForegroundColor = ConsoleColor.White;
     }
-
+    
     private void DisplayIntro()
     {
         Console.WriteLine("You open the map the mysterious man gave you:");

@@ -18,6 +18,10 @@ public class HelpCommand : IPlayerCommand
                     Monsters
                     You can sense monsters in an adjacent room.
                     If you run into one you will teleport to the cave entrance.
+                    
+                    Arrows
+                    You can shoot arrows at monsters. 
+                    If you shoot in the correct room the monster will be gone.
 
                     Map
                     Only at the cave entrance is enough light to look at the map.

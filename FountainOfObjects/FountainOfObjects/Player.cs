@@ -4,6 +4,7 @@ public class Player
 {
     private readonly Room _startRoom = new Room(0, 0);
     public string PlayerName { get; set; }
+    public int ArrowAmount { get; set; }
     public Room CurrentRoom { get; set; } = new Room(0, 0);
     public bool HasEnabledFountain { get; set; } = false;
     public bool HasWonGame { get; set; } = false;
@@ -13,6 +14,7 @@ public class Player
     public Player()
     {
         PlayerName = GetPlayerName();
+        ArrowAmount = 3;
     }
 
     // Get Player Name -----------------------------------------
@@ -29,6 +31,11 @@ public class Player
 
         Console.Clear();
         return name;
+    }
+    
+    public void DisplayArrows()
+    {
+        Console.WriteLine($"You have still {ArrowAmount} arrows left.");
     }
 
     // Get Player Action -----------------------------------------
@@ -69,6 +76,8 @@ public class Player
             Command = new HelpCommand();
         else if (input == "map")
             Command = new MapCommand();
+        else if (input == "shoot")
+            Command = new ShootCommand();
         else return;
         
         Command.Execute();

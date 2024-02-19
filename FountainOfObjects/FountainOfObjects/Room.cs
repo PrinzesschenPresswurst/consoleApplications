@@ -26,14 +26,19 @@ public class Room
 
     public bool CheckIfHasMonster()
     {
-        if (RoomColumn == Game.GameMonster.MonsterLocation.RoomColumn &&
+        if (!Game.GameMonster.IsAlive)
+            return false;
+        else if (RoomColumn == Game.GameMonster.MonsterLocation.RoomColumn &&
             RoomRow == Game.GameMonster.MonsterLocation.RoomRow)
             return true;
         else return false;
     }
 
-    private bool CheckIfHasAdjacentMonster()
+    public bool CheckIfHasAdjacentMonster()
     {
+        if (!Game.GameMonster.IsAlive)
+            return false;
+        
         if (Game.GamePlayer.CurrentRoom.RoomRow == Game.GameMonster.MonsterLocation.RoomRow &&
             Math.Abs(Game.GamePlayer.CurrentRoom.RoomColumn - Game.GameMonster.MonsterLocation.RoomColumn) == 1)
             return true;
@@ -52,6 +57,7 @@ public class Room
         if (CheckIfHasAdjacentMonster())
         {
             response = "!!You sense a monster in an adjacent room!!";
+            Game.GamePlayer.DisplayArrows();
         }
         
         if (CheckIfHasMonster())
@@ -88,7 +94,6 @@ public class Room
                 Console.ForegroundColor = ConsoleColor.White;
                 return "You sense nothing.";
             }
-               
         }
     }
 }
