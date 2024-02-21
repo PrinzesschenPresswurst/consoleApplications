@@ -2,10 +2,9 @@
 
 public class Player
 {
-    private readonly Room _startRoom = new Room(0, 0);
     public string PlayerName { get; set; }
     public int ArrowAmount { get; set; }
-    public Room CurrentRoom { get; set; } = new Room(0, 0);
+    public Room CurrentRoom { get; set; } = new Room(0,0);
     public bool HasEnabledFountain { get; set; } = false;
     public bool HasWonGame { get; set; } = false;
     private IPlayerCommand? Command { get; set; } 
@@ -83,9 +82,9 @@ public class Player
         Command.Execute();
     }
 
-    private void BackToStart()
+    public void BackToStart()
     {
-        CurrentRoom.RoomRow = _startRoom.RoomRow;
-        CurrentRoom.RoomColumn = _startRoom.RoomColumn;
+        CurrentRoom.RoomRow = 0;
+        CurrentRoom.RoomColumn = 0;
     }
 }

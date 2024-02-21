@@ -6,7 +6,7 @@ public class MoveCommand : IPlayerMoveCommand
     {
         if (direction == "east" )
         {
-            if (Game.GamePlayer.CurrentRoom.RoomColumn < 3)
+            if (Game.GamePlayer.CurrentRoom.RoomColumn < Game.GameMap.MapColumns-1)
                 Game.GamePlayer.CurrentRoom.RoomColumn += 1;
             else HandleWalls();
         }
@@ -20,7 +20,7 @@ public class MoveCommand : IPlayerMoveCommand
         
         if (direction == "south")
         {
-            if (Game.GamePlayer.CurrentRoom.RoomRow < 3)
+            if (Game.GamePlayer.CurrentRoom.RoomRow < Game.GameMap.MapRows-1)
                 Game.GamePlayer.CurrentRoom.RoomRow += 1;
             else HandleWalls();
         }

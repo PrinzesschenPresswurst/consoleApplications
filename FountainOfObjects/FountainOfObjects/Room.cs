@@ -13,13 +13,15 @@ public class Room
 
     public bool CheckIfEntrance()
     {
-        if (RoomRow == 0 && RoomColumn == 0)
+        //if (RoomRow == 0 && RoomColumn == 0)
+        if(RoomRow == Game.GameMap.StartRoom.RoomRow && RoomColumn == Game.GameMap.StartRoom.RoomColumn)
             return true;
         else return false;
     }
     public bool CheckIfFountain()
     {
-        if (RoomRow == 0 && RoomColumn == 2)
+        //if (RoomRow == 0 && RoomColumn == 2)
+        if(RoomRow == Game.GameMap.FountainRoom.RoomRow && RoomColumn == Game.GameMap.FountainRoom.RoomColumn)
             return true;
         else return false;
     }
@@ -28,8 +30,8 @@ public class Room
     {
         if (!Game.GameMonster.IsAlive)
             return false;
-        else if (RoomColumn == Game.GameMonster.MonsterLocation.RoomColumn &&
-            RoomRow == Game.GameMonster.MonsterLocation.RoomRow)
+        else if (RoomColumn == Game.GameMap.MonsterRoom.RoomColumn &&
+            RoomRow == Game.GameMap.MonsterRoom.RoomRow)
             return true;
         else return false;
     }
@@ -39,12 +41,12 @@ public class Room
         if (!Game.GameMonster.IsAlive)
             return false;
         
-        if (Game.GamePlayer.CurrentRoom.RoomRow == Game.GameMonster.MonsterLocation.RoomRow &&
-            Math.Abs(Game.GamePlayer.CurrentRoom.RoomColumn - Game.GameMonster.MonsterLocation.RoomColumn) == 1)
+        if (Game.GamePlayer.CurrentRoom.RoomRow == Game.GameMap.MonsterRoom.RoomRow &&
+            Math.Abs(Game.GamePlayer.CurrentRoom.RoomColumn - Game.GameMap.MonsterRoom.RoomColumn) == 1)
             return true;
         
-        if (Game.GamePlayer.CurrentRoom.RoomColumn == Game.GameMonster.MonsterLocation.RoomColumn &&
-            Math.Abs(Game.GamePlayer.CurrentRoom.RoomRow - Game.GameMonster.MonsterLocation.RoomRow) == 1)
+        if (Game.GamePlayer.CurrentRoom.RoomColumn == Game.GameMap.MonsterRoom.RoomColumn &&
+            Math.Abs(Game.GamePlayer.CurrentRoom.RoomRow - Game.GameMap.MonsterRoom.RoomRow) == 1)
             return true;
         
         return false;

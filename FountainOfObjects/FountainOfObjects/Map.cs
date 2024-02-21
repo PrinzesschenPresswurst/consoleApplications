@@ -2,13 +2,42 @@
 
 public class Map
 {
-    private static readonly int MapRows = 4;
-    private static readonly int MapColumns = 4;
-    private int[,] RoomGrid { get; set; }= new int [MapRows, MapColumns];
-    private Room[] RoomArray { get; set; } = new Room[16];
+    public int MapRows { get; set; } 
+    public int MapColumns { get; set; } 
+    public Room StartRoom { get; set; } = new Room(0, 0);
+    public Room FountainRoom { get; set; } 
+    public Room MonsterRoom { get; set; } 
+    private int[,] RoomGrid { get; set; }
+    private Room[] RoomArray { get; set; }
     
-    public Map()
+    public Map(string mapSize)
     {
+       
+        if (mapSize == "small")
+        {
+            FountainRoom = new Room(0, 2);
+            MonsterRoom = new Room(0, 3); 
+            //Monster monster1 = new Monster(0,3);
+            MapRows = 4;
+            MapColumns = 4;
+        }
+        if (mapSize == "normal")
+        {
+            FountainRoom = new Room(2, 5);
+            MonsterRoom = new Room(0, 4); 
+            MapRows = 6;
+            MapColumns = 6;
+        }
+        if (mapSize == "big")
+        {
+            FountainRoom = new Room(6, 6);
+            MonsterRoom = new Room(1, 2); 
+            MapRows = 8;
+            MapColumns = 8;
+        }
+        
+        RoomGrid = new int [MapRows, MapColumns];
+        RoomArray = new Room[MapRows * MapColumns];
         CreateMap();
     }
     
@@ -28,10 +57,10 @@ public class Map
 
     public void DisplayMap()
     {
-        string map = """
+        string mapSmall = """
             
             -----------------------------------------
-             * FOUNTAIN CAVE MAP *
+             * SMALL FOUNTAIN CAVE MAP *
              
             |     |__________________
             |     |     |     |     |  0
@@ -49,8 +78,67 @@ public class Map
             ----------------------------------------- 
             
             """;
+        string mapNormal = """
+            
+            -----------------------------------------
+             * NORMAL FOUNTAIN CAVE MAP *
+             
+            |     |______________________________
+            |     |     |     |     |     |     |  0
+            |-----+-----+-----+-----+-----+-----|          COMPASS
+            |     |     |     |     |     |     |  1          N
+            |-----+-----+-----+-----+-----+-----|          W  +  E
+            |     |     |     |     |     |     |  2          S
+            |-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |  3
+            |-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |  4
+            |-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |  5
+            --------------------------------------
+               0     1     2     3     4     5
+            
+            Magic Word - Oklahoma !!!
+            
+            ----------------------------------------- 
+            
+            """;
+        string mapBig = """
+            
+            -----------------------------------------
+             * BIG FOUNTAIN CAVE MAP *
+             
+            |     |__________________________________________
+            |     |     |     |     |     |     |     |     |  0
+            |-----+-----+-----+-----+-----+-----+-----+-----|          COMPASS
+            |     |     |     |     |     |     |     |     |  1          N
+            |-----+-----+-----+-----+-----+-----+-----+-----|          W  +  E
+            |     |     |     |     |     |     |     |     |  2          S
+            |-----+-----+-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |     |     |  3
+            |-----+-----+-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |     |     |  4
+            |-----+-----+-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |     |     |  5
+            |-----+-----+-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |     |     |  6
+            |-----+-----+-----+-----+-----+-----+-----+-----|
+            |     |     |     |     |     |     |     |     |  7
+            --------------------------------------------------
+               0     1     2     3     4     5     6     7
+            
+            Magic Word - Oklahoma !!!
+            
+            ----------------------------------------- 
+            
+            """;
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine(map);
+        if (MapRows == 4)
+            Console.WriteLine(mapSmall);
+        else if (MapRows == 6)
+            Console.WriteLine(mapNormal);
+        else if (MapRows == 8)
+            Console.WriteLine(mapBig);
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Press any key to close the map.");
         Console.ReadKey(true);

@@ -8,13 +8,37 @@ public class Game
     
     public Game()
     {
-        GameMap = new Map();
         GamePlayer = new Player();
+        
+        string mapSize = AskMapSize();
+        GameMap = new Map(mapSize);
         GameMonster = new Monster();
+        GamePlayer.BackToStart();
+        
         DisplayIntro();
         GameMap.DisplayMap();
     }
-
+    
+    private string AskMapSize()
+    {
+        Console.WriteLine($"{GamePlayer.PlayerName}, how big should the cave be?");
+        Console.WriteLine("small, normal, big?");
+        int size;
+        string input;
+        do
+        {
+            input = Console.ReadLine();
+            size = input switch
+            {
+                "small" => 4,
+                "normal" => 6,
+                "big" => 8,
+                _ => 0
+            }; 
+        } while (size == 0);
+        return input;
+    }
+    
     public void RunRound()
     {
         GivePlayerInfo();
