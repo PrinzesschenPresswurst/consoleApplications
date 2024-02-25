@@ -7,18 +7,18 @@ public class Map
     public Room StartRoom { get; set; } = new Room(0, 0);
     public Room FountainRoom { get; set; } = new Room(0, 0);
     public Monster Monster { get; set; } = new Monster(0, 0);
-    private int[,] RoomGrid { get; set; }
-    private Room[] RoomArray { get; set; }
+    private int[,]? RoomGrid { get; set; }
+    private Room[]? RoomArray { get; set; }
     public string MapDisplayString { get; set; } = "";
     private IMapSizeHandler MapSizeHandler { get; set; }
     
     public Map()
     {
-       int mapSize = AskMapSize();
+       int mapSize = AskMapSize( );
        MapSizeHandler = new FixedMapSizeHandler();
        MapSizeHandler.SetupMap(this, mapSize);
        
-       CreateMap(MapRows, MapColumns);
+       CreateMap();
        
     }
     
@@ -27,10 +27,10 @@ public class Map
         Console.WriteLine($"{Game.GamePlayer.PlayerName}, how big should the cave be?");
         Console.WriteLine("small, normal, big?");
         int size;
-        string input;
+        
         do
         {
-            input = Console.ReadLine();
+            string? input = Console.ReadLine();
             size = input switch
             {
                 "small" => 1,
@@ -42,15 +42,15 @@ public class Map
         return size;
     }
     
-    public void CreateMap(int row, int column)
+    private void CreateMap()
     {
         RoomGrid = new int [MapRows, MapColumns];
         RoomArray = new Room[MapRows * MapColumns];
         
         int i = 0;
-        for ( row = 0; row < RoomGrid.GetLength(0); row ++)
+        for ( int row = 0; row < RoomGrid.GetLength(0); row ++)
         {
-            for ( column = 0; column < RoomGrid.GetLength(1); column++)
+            for ( int column = 0; column < RoomGrid.GetLength(1); column++)
             {
                 RoomArray[i] = new Room(row,column);
                 //Console.WriteLine($"{RoomArray[i].RoomColumn}, {RoomArray[i].RoomRow}");

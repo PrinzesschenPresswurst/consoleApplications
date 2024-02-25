@@ -13,14 +13,12 @@ public class Room
 
     public bool CheckIfEntrance()
     {
-        //if (RoomRow == 0 && RoomColumn == 0)
         if(RoomRow == Game.GameMap.StartRoom.RoomRow && RoomColumn == Game.GameMap.StartRoom.RoomColumn)
             return true;
         else return false;
     }
     public bool CheckIfFountain()
     {
-        //if (RoomRow == 0 && RoomColumn == 2)
         if(RoomRow == Game.GameMap.FountainRoom.RoomRow && RoomColumn == Game.GameMap.FountainRoom.RoomColumn)
             return true;
         else return false;

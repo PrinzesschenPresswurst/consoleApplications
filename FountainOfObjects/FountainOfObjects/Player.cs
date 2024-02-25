@@ -5,8 +5,8 @@ public class Player
     public string PlayerName { get; set; }
     public int ArrowAmount { get; set; }
     public Room CurrentRoom { get; set; } = new Room(0,0);
-    public bool HasEnabledFountain { get; set; } = false;
-    public bool HasWonGame { get; set; } = false;
+    public bool HasEnabledFountain { get; set; }
+    public bool HasWonGame { get; set; } 
     private IPlayerCommand? Command { get; set; } 
     private IPlayerMoveCommand? MoveCommand { get; set; }
 

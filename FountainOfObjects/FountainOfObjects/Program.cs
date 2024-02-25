@@ -3,6 +3,7 @@
 Console.Title = "Fountain of Objects";
 
 Game newGame = new Game();
+newGame.DisplayIntro();
 
 while (true)
 {
