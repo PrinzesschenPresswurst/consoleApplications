@@ -6,39 +6,61 @@ public class Map
     public int MapColumns { get; set; } 
     public Room StartRoom { get; set; } = new Room(0, 0);
     public Room FountainRoom { get; set; } 
-    public Room MonsterRoom { get; set; } 
+    public Monster Monster { get; set; }
     private int[,] RoomGrid { get; set; }
     private Room[] RoomArray { get; set; }
     
-    public Map(string mapSize)
+    public string MapDisplayString { get; set; }
+    
+    public Map()
     {
+       string mapSize = AskMapSize();
        
-        if (mapSize == "small")
-        {
+       if (mapSize == "small")
+       {
             FountainRoom = new Room(0, 2);
-            MonsterRoom = new Room(0, 3); 
-            //Monster monster1 = new Monster(0,3);
+            Monster = new Monster(0,3);
             MapRows = 4;
             MapColumns = 4;
-        }
-        if (mapSize == "normal")
-        {
+       }
+       if (mapSize == "normal")
+       {
             FountainRoom = new Room(2, 5);
-            MonsterRoom = new Room(0, 4); 
+            Monster = new Monster(0, 4);
             MapRows = 6;
             MapColumns = 6;
-        }
-        if (mapSize == "big")
-        {
+       } 
+       if (mapSize == "big") 
+       {
             FountainRoom = new Room(6, 6);
-            MonsterRoom = new Room(1, 2); 
+            Monster = new Monster(1, 2);
             MapRows = 8;
-            MapColumns = 8;
-        }
-        
-        RoomGrid = new int [MapRows, MapColumns];
-        RoomArray = new Room[MapRows * MapColumns];
-        CreateMap();
+            MapColumns = 8; 
+       }
+       RoomGrid = new int [MapRows, MapColumns];
+       RoomArray = new Room[MapRows * MapColumns];
+       CreateMap();
+       Game.GamePlayer.BackToStart();
+    }
+    
+    private string AskMapSize()
+    {
+        Console.WriteLine($"{Game.GamePlayer.PlayerName}, how big should the cave be?");
+        Console.WriteLine("small, normal, big?");
+        int size;
+        string input;
+        do
+        {
+            input = Console.ReadLine();
+            size = input switch
+            {
+                "small" => 4,
+                "normal" => 6,
+                "big" => 8,
+                _ => 0
+            }; 
+        } while (size == 0);
+        return input;
     }
     
     private void CreateMap()

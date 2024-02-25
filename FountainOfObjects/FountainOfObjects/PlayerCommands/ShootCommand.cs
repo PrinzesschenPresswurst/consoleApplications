@@ -66,11 +66,11 @@ public class ShootCommand : IPlayerCommand
 
     private void EvaluateShot()
     {
-        if (RoomToShootAt.RoomColumn == Game.GameMap.MonsterRoom.RoomColumn &&
-            RoomToShootAt.RoomRow == Game.GameMap.MonsterRoom.RoomRow)
+        if (RoomToShootAt.RoomColumn == Game.GameMap.Monster.MonsterLocation.RoomColumn &&
+            RoomToShootAt.RoomRow == Game.GameMap.Monster.MonsterLocation.RoomRow)
         {
             Console.WriteLine("You hit the monster and hear it die.");
-            Game.GameMonster.IsAlive = false;
+            Game.GameMap.Monster.IsAlive = false;
         }
         else Console.WriteLine("You miss the monster.");
     }

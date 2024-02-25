@@ -2,41 +2,17 @@
 
 public class Game
 {
-    public static Player GamePlayer { get; set; } 
-    public static Map GameMap { get; set; } 
-    public static Monster GameMonster { get; set; } 
+    public static Player? GamePlayer { get; private set; } 
+    public static Map? GameMap { get; private set; } 
     
     public Game()
     {
         GamePlayer = new Player();
+        GameMap = new Map();
         
-        string mapSize = AskMapSize();
-        GameMap = new Map(mapSize);
-        GameMonster = new Monster();
-        GamePlayer.BackToStart();
         
         DisplayIntro();
         GameMap.DisplayMap();
-    }
-    
-    private string AskMapSize()
-    {
-        Console.WriteLine($"{GamePlayer.PlayerName}, how big should the cave be?");
-        Console.WriteLine("small, normal, big?");
-        int size;
-        string input;
-        do
-        {
-            input = Console.ReadLine();
-            size = input switch
-            {
-                "small" => 4,
-                "normal" => 6,
-                "big" => 8,
-                _ => 0
-            }; 
-        } while (size == 0);
-        return input;
     }
     
     public void RunRound()

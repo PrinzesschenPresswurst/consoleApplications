@@ -28,25 +28,25 @@ public class Room
 
     public bool CheckIfHasMonster()
     {
-        if (!Game.GameMonster.IsAlive)
+        if (!Game.GameMap.Monster.IsAlive)
             return false;
-        else if (RoomColumn == Game.GameMap.MonsterRoom.RoomColumn &&
-            RoomRow == Game.GameMap.MonsterRoom.RoomRow)
+        else if (RoomColumn == Game.GameMap.Monster.MonsterLocation.RoomColumn &&
+            RoomRow == Game.GameMap.Monster.MonsterLocation.RoomRow)
             return true;
         else return false;
     }
 
     public bool CheckIfHasAdjacentMonster()
     {
-        if (!Game.GameMonster.IsAlive)
+        if (!Game.GameMap.Monster.IsAlive)
             return false;
         
-        if (Game.GamePlayer.CurrentRoom.RoomRow == Game.GameMap.MonsterRoom.RoomRow &&
-            Math.Abs(Game.GamePlayer.CurrentRoom.RoomColumn - Game.GameMap.MonsterRoom.RoomColumn) == 1)
+        if (Game.GamePlayer.CurrentRoom.RoomRow == Game.GameMap.Monster.MonsterLocation.RoomRow &&
+            Math.Abs(Game.GamePlayer.CurrentRoom.RoomColumn - Game.GameMap.Monster.MonsterLocation.RoomColumn) == 1)
             return true;
         
-        if (Game.GamePlayer.CurrentRoom.RoomColumn == Game.GameMap.MonsterRoom.RoomColumn &&
-            Math.Abs(Game.GamePlayer.CurrentRoom.RoomRow - Game.GameMap.MonsterRoom.RoomRow) == 1)
+        if (Game.GamePlayer.CurrentRoom.RoomColumn == Game.GameMap.Monster.MonsterLocation.RoomColumn &&
+            Math.Abs(Game.GamePlayer.CurrentRoom.RoomRow - Game.GameMap.Monster.MonsterLocation.RoomRow) == 1)
             return true;
         
         return false;

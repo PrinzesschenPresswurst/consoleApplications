@@ -3,12 +3,11 @@
 public class Monster
 {
     public bool IsAlive { get; set; } = true;
-    //public Room MonsterLocation { get; set; }
-
-    //TODO make monster not a room - make multiple possible - how to track adjacent?
-    /*public Monster()
+    public Room MonsterLocation { get; set; }
+    
+    public Monster(int row, int column)
     {
         MonsterLocation = new Room(row, column);
-    }*/
+    }
     
 }
