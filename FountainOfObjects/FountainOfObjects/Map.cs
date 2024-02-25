@@ -7,25 +7,22 @@ public class Map
     public Room StartRoom { get; set; } = new Room(0, 0);
     public Room FountainRoom { get; set; } = new Room(0, 0);
     public Monster Monster { get; set; } = new Monster(0, 0);
-    private int[,]? RoomGrid { get; set; }
+    public int[,]? RoomGrid { get; set; }
     private Room[]? RoomArray { get; set; }
     public string MapDisplayString { get; set; } = "";
     private IMapSizeHandler MapSizeHandler { get; set; }
     
     public Map()
     {
-       int mapSize = AskMapSize( );
-       MapSizeHandler = new FixedMapSizeHandler();
-       MapSizeHandler.SetupMap(this, mapSize);
-       
+       AskMapSize();
        CreateMap();
        
     }
     
-    private int AskMapSize()
+    private void AskMapSize()
     {
         Console.WriteLine($"{Game.GamePlayer.PlayerName}, how big should the cave be?");
-        Console.WriteLine("small, normal, big?");
+        Console.WriteLine("small, normal, big or random?");
         int size;
         
         do
@@ -36,10 +33,20 @@ public class Map
                 "small" => 1,
                 "normal" => 2,
                 "big" => 3,
+                "random" => 4,
                 _ => 0
             }; 
         } while (size == 0);
-        return size;
+
+        if (size == 4)
+        {
+            MapSizeHandler = new RandomMapSizeHandler();
+            MapSizeHandler.SetupMap(this, size);
+            
+        }
+        MapSizeHandler = new FixedMapSizeHandler();
+        MapSizeHandler.SetupMap(this, size);
+        
     }
     
     private void CreateMap()

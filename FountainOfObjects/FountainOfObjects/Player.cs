@@ -77,6 +77,8 @@ public class Player
             Command = new MapCommand();
         else if (input == "shoot")
             Command = new ShootCommand();
+        else if (input == "cheat")
+            Command = new CheatCommand();
         else return;
         
         Command.Execute();
