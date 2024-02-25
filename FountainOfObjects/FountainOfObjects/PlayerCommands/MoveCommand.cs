@@ -37,10 +37,7 @@ public class MoveCommand : IPlayerMoveCommand
 
             if (Game.GamePlayer.CurrentRoom.CheckIfEntrance() && Game.GamePlayer.HasEnabledFountain)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("You made it.");
-                Game.GamePlayer.HasWonGame = true;
-                Console.ForegroundColor = ConsoleColor.White;
+                Game.EndGameWon();
             }
             else if (Game.GamePlayer.CurrentRoom.RoomRow > 0)
                 Game.GamePlayer.CurrentRoom.RoomRow -= 1;
