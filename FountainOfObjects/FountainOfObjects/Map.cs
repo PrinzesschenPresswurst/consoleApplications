@@ -7,8 +7,8 @@ public class Map
     public Room StartRoom { get; set; } = new Room(0, 0);
     public Room FountainRoom { get; set; } = new Room(0, 0);
     public Monster Monster { get; set; } = new Monster(0, 0);
-    public int[,]? RoomGrid { get; set; }
-    private Room[]? RoomArray { get; set; }
+    private int[,] RoomGrid { get; set; }
+    private Room[] RoomArray { get; set; }
     public string MapDisplayString { get; set; } = "";
     private IMapSizeHandler MapSizeHandler { get; set; }
     
@@ -16,7 +16,6 @@ public class Map
     {
        AskMapSize();
        CreateMap();
-       
     }
     
     private void AskMapSize()
@@ -42,11 +41,11 @@ public class Map
         {
             MapSizeHandler = new RandomMapSizeHandler();
             MapSizeHandler.SetupMap(this, size);
-            
+            return;
         }
+        
         MapSizeHandler = new FixedMapSizeHandler();
         MapSizeHandler.SetupMap(this, size);
-        
     }
     
     private void CreateMap()

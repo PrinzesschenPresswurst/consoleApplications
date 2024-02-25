@@ -12,5 +12,4 @@ while (true)
         break;
 }
 
-
 Console.ReadKey();

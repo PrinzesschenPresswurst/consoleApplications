@@ -9,5 +9,4 @@ public class Monster
     {
         MonsterLocation = new Room(row, column);
     }
-    
 }
