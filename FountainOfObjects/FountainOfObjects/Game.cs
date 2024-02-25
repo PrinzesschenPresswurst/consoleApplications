@@ -9,8 +9,6 @@ public class Game
     {
         GamePlayer = new Player();
         GameMap = new Map();
-        
-        
         DisplayIntro();
         GameMap.DisplayMap();
     }
