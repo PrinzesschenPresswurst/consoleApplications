@@ -15,44 +15,44 @@ public class Board
         MineCount = mineCount;
         CellArray = new Cell[boardRows, boardColumns];
         CreateCellArray();
-        AddMines();
+        AddMinesWithArray();
         CalculateAdjacentMines();
     }
 
     private void CreateCellArray()
     {
-        for (int i = 0; i < CellArray.GetLength(0); i++)
+        for (int row = 0; row < BoardRows; row++)
         {
-            for (int j = 0; j < CellArray.GetLength(1); j++)
+            for (int column = 0; column < BoardColumns; column++)
             {
-                CellArray[i, j] = new Cell
-                {
-                    Row = i,
-                    Column = j
-                };
+                CellArray[row, column] = new Cell(row, column);
             }
         }
     }
-
-    private void AddMines()
+    
+    private void AddMinesWithArray()
     {
         if (MineCount > BoardColumns * BoardRows)
         {
             Console.WriteLine("too many mines");
             MineCount = BoardColumns * BoardRows;
         }
-            
+        
+        Random r = new Random();
+        List<int[]> positionsToPlaceMines = new List<int[]>();
+        foreach (var cell in CellArray)
+        {
+            positionsToPlaceMines.Add([cell.Row, cell.Column]);
+        }
+        
         for (int i = 0; i < MineCount; i++)
         {
-            Random r = new Random();
-            int row = r.Next(0, BoardRows);
-            int column = r.Next(0, BoardColumns);
-            while (CellArray[row, column].IsMine)
-            {
-                 column = r.Next(0, BoardColumns);
-                 row = r.Next(0, BoardRows );
-            }
+            int index = r.Next(0, positionsToPlaceMines.Count);
+            int[] position = positionsToPlaceMines[index];
+            int row = position[0]; 
+            int column = position[1]; 
             CellArray[row, column].IsMine = true;
+            positionsToPlaceMines.RemoveAt(index);
         }
     }
     
