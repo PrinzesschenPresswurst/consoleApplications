@@ -3,7 +3,7 @@
 public class Cell
 {
     public bool IsMine { get;  set; }
-    public bool IsCovered { get; set; } = false;
+    public bool IsCovered { get; set; } = true;
     public int Row { get; init; }
     public int Column { get; init; }
     public int AdjacentMines { get; set; }
