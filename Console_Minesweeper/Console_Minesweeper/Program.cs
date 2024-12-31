@@ -10,8 +10,18 @@ void StartNewGame()
     Console.Clear();
     Board board = new Board(10,9, 10);
     Game game = new Game(board);
-    PlayAgainHandler playAgainHandler = new PlayAgainHandler();
+    game.RunGame();
+    PlayerInputHandler playerInputHandler = new PlayerInputHandler(board);
+    bool wantsToPlayAgain = playerInputHandler.AskIfPlayerWantsToPlayAgain();
     
-    if (playAgainHandler.WantsToPlayAgain)
+    if (!wantsToPlayAgain)
+    {
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+
+    if (wantsToPlayAgain)
+    {
         StartNewGame();
+    }
 }

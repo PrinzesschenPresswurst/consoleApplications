@@ -2,40 +2,42 @@
 
 public class Game
 {
-    private bool GameWasWon { get; set; }
-
+    private bool GameWasWon { get; set; } = false;
     public event EventHandler OnMineUncovered;
     public event EventHandler OnGameWon;
-    private bool GameIsOver { get; set; }
+    private bool GameIsOver { get; set; } = false;
     private Board Board{ get; set; }
-    private BoardDrawer BoardDrawer { get; set; }
+    private BoardDrawer BoardDrawer { get; set; } 
     private PlayerInputHandler PlayerInputHandler { get; set; }
     private SoundHandler SoundHandler { get; set; }
+    private Cell PickedCell { get; set; }
     
 
     public Game(Board board)
     {
-        GameWasWon = false;
-        GameIsOver = false;
         Board = board;
         BoardDrawer = new BoardDrawer(Board);
         PlayerInputHandler = new PlayerInputHandler(board);
         SoundHandler = new SoundHandler(this);
-        RunTurn();
+    }
+
+    public void RunGame()
+    {
+        RunTurns();
+        DisplayGameEndResult();
     }
     
-    private void RunTurn()
+    private void RunTurns()
     {
         while (!GameIsOver)
         {
             BoardDrawer.DrawBoard();
-            PlayerInputHandler.AskForPlayerInput();
-            ExecuteResult();
+            PickedCell = PlayerInputHandler.GetCellFromPlayerInput();
+            ExecuteTurnResult();
         }
-        HandleGameEnd();
     }
 
-    private void HandleGameEnd()
+    private void DisplayGameEndResult()
     {
         BoardDrawer.DrawBoard();
         if (GameWasWon)
@@ -51,15 +53,14 @@ public class Game
         }
     }
 
-    private void ExecuteResult()
+    private void ExecuteTurnResult()
     {
         Console.Beep(440, 400);
-        Cell pickedCell = PlayerInputHandler.GetPickedCell();
-        pickedCell.IsCovered = false;
+        PickedCell.IsCovered = false;
         
-        CheckForMine(pickedCell);
-        CheckForZeroField(pickedCell);
-        Console.WriteLine(pickedCell.AdjacentMines);
+        CheckForMine(PickedCell);
+        CheckForZeroField(PickedCell);
+        Console.WriteLine(PickedCell.AdjacentMines);
         CheckForGameWon();
         
         Console.Clear(); 
@@ -70,7 +71,6 @@ public class Game
         if (pickedCell.IsMine)
             GameIsOver = true;
     }
-    
 
     private void CheckForZeroField(Cell pickedCell)
     {

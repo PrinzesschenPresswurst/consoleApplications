@@ -7,16 +7,16 @@ public class PlayerInputHandler
     private readonly List<char> _validChars = new List<char>();
     private int PickedRowIndex { get; set; }
     private int PickedColumnIndex { get; set; }
+    public bool WantsToPlayAgain { get; private set; }
 
     public PlayerInputHandler(Board board)
     {
         GameBoard = board;
+        InitializeValidChars();
     }
     
-    public void AskForPlayerInput()
+    public Cell GetCellFromPlayerInput()
     {
-        GetValidChars();
-        
         Regex letterRe = new Regex(@"([a-zA-Z]+)");
         Regex numberRe = new Regex("([0-9]+)");
 
@@ -26,7 +26,7 @@ public class PlayerInputHandler
             string? playerInput = Console.ReadLine();
             
             if (playerInput == null)
-                return;
+                return null;
         
             Match resultLetter = letterRe.Match(playerInput);
             Match resultNumber = numberRe.Match(playerInput);
@@ -36,8 +36,10 @@ public class PlayerInputHandler
                 break;  
             }
         } 
+        Cell pickedCell = GameBoard.CellArray[PickedRowIndex, PickedColumnIndex];
+        return pickedCell;
     }
-
+    
     private bool CheckIfNumberIsValid(Match resultNumber)
     {
         if (Int32.TryParse(resultNumber.Value, out int i))
@@ -68,7 +70,7 @@ public class PlayerInputHandler
         return false;
     }
 
-    private void GetValidChars()
+    private void InitializeValidChars()
     {
         char start = 'a';
         for (int j = 0; j < GameBoard.BoardColumns+1; j++)
@@ -78,10 +80,38 @@ public class PlayerInputHandler
             start++;
         }
     }
-
-    public Cell GetPickedCell()
+    
+    public bool AskIfPlayerWantsToPlayAgain()
     {
-        Cell pickedCell = GameBoard.CellArray[PickedRowIndex, PickedColumnIndex];
-        return pickedCell;
+        string? answer = "bla";
+        Console.WriteLine("Do you want to play again? y/n");
+        while (answer != null && !EvaluateAnswer(answer))
+            answer = Console.ReadLine();
+        
+        return WantsToPlayAgain;
+    }
+
+    private bool EvaluateAnswer(string input)
+    {
+        string[] validYesAnswers = ["y", "Y", "yes", "Yes"];
+        string[] validNoAnswers = ["n", "N", "no", "No"];
+        
+        foreach (var answer in validYesAnswers)
+        {
+            if (input == answer)
+            {
+                WantsToPlayAgain = true;
+                return true;
+            }
+        }
+        foreach (var answer in validNoAnswers)
+        {
+            if (input == answer)
+            {
+                WantsToPlayAgain = false;
+                return true;
+            }
+        }
+        return false;
     }
 }
