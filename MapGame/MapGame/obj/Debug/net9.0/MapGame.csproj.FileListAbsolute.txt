@@ -1,0 +1,15 @@
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\bin\Debug\net9.0\MapGame.exe
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\bin\Debug\net9.0\MapGame.deps.json
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\bin\Debug\net9.0\MapGame.runtimeconfig.json
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\bin\Debug\net9.0\MapGame.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\bin\Debug\net9.0\MapGame.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.AssemblyInfoInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.AssemblyInfo.cs
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.csproj.CoreCompileInputs.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.sourcelink.json
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\refint\MapGame.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.pdb
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\MapGame.genruntimeconfig.cache
+C:\Repositories\CSharp_Exercises\consoleApplications\MapGame\MapGame\obj\Debug\net9.0\ref\MapGame.dll
