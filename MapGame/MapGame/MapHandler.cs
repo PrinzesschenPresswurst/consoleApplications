@@ -6,27 +6,19 @@ public class MapHandler
     private Player Player { get; set; }
     public char[,] SomeMapArray { get; private set; } = null;
     public BaseMap CurrentMap = new BaseMap();
-    private readonly BaseMap _forest = new MapForest();
-    private readonly BaseMap _house = new MapHouse();
-    private readonly BaseMap _forest2 = new MapForest2();
-    private readonly BaseMap _house2 = new MapHouse2();
-    
     
     public MapHandler(Player player)
     {
         Player = player;
         LinkUpMaps();
-        InitializeMapFromObject(_forest);
+        InitializeMapFromObject(MapLinker.Forest);
     }
 
-    private void LinkUpMaps()
+    private static void LinkUpMaps()
     {
-        _forest.MapToGoTo1 = _house;
-        _forest.MapToGoTo2 = _forest2;
-        _house.MapToGoTo1 = _forest;
-        _house2.MapToGoTo1 = _forest2;
-        _forest2.MapToGoTo1 = _house;
-        _forest2.MapToGoTo2 = _forest;
+       MapLinker.Forest.LinkMaps();
+       MapLinker.House.LinkMaps();
+       MapLinker.ForestWell.LinkMaps();
     }
     
     public void InitializeMapFromObject (BaseMap map)
@@ -42,8 +34,7 @@ public class MapHandler
         
         for (int i = 0; i < SomeMapArray.GetLength(0); i++)
         {
-            char[] subSplit = new char[map.MapCharCount];
-            subSplit =  someMapSplit[i].ToCharArray();
+            char[] subSplit =  someMapSplit[i].ToCharArray();
             
             for (int j = 0; j < SomeMapArray.GetLength(1); j++)
             {

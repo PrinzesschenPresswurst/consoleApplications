@@ -63,13 +63,15 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
 
     private void SwitchMap(char target)
     {
-        Console.WriteLine(target);
-        if (MapHandler.CurrentMap.MapToGoTo1 == null)
-            return;
-        if (target == '1')
-            MapHandler.InitializeMapFromObject(MapHandler.CurrentMap.MapToGoTo1);
-        else if (target == '2')
-            MapHandler.InitializeMapFromObject(MapHandler.CurrentMap.MapToGoTo2);
+        switch (target)
+        {
+            case '1' when MapHandler.CurrentMap.MapToGoTo1 != null:
+                MapHandler.InitializeMapFromObject(MapHandler.CurrentMap.MapToGoTo1);
+                break;
+            case '2' when MapHandler.CurrentMap.MapToGoTo2 != null:
+                MapHandler.InitializeMapFromObject(MapHandler.CurrentMap.MapToGoTo2);
+                break;
+        }
         MapHandler.DisplayMap();
     }
 }                   

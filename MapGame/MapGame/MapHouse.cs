@@ -23,7 +23,13 @@ public class MapHouse : BaseMap
             Console.WriteLine(s.Length);
         MapCharCount = test[0].Length;
         MapLineCount = test.Length;
-        MapToGoTo1 = null;
+        MapToGoTo1 = MapLinker.Forest;
+        MapToGoTo2 = null;
+    }
+    
+    public override void LinkMaps()
+    {
+        MapToGoTo1 = MapLinker.Forest;
         MapToGoTo2 = null;
     }
 }

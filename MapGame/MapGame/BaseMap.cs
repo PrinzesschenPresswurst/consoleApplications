@@ -7,6 +7,8 @@ public class BaseMap
     public int MapCharCount { get; protected init; } = 5;
     public string MapString { get; protected init; } = "";
     public string MapStoryText = "";
-    public BaseMap? MapToGoTo1 { get; set; } = null;
-    public BaseMap? MapToGoTo2 { get; set; } = null;
+    public BaseMap? MapToGoTo1 { get; protected set; } = null;
+    public BaseMap? MapToGoTo2 { get; protected set; } = null;
+    
+    public virtual void LinkMaps() { }
 }
