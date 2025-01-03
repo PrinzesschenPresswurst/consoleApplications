@@ -1,12 +1,13 @@
 ﻿using System.Text;
 namespace MapGame;
 
-public class Map
+public class MapHandler
 {
     private Player Player { get; set; }
-    public char[,] SomeMapArray { get; private set; } 
+    public char[,] SomeMapArray { get; private set; }
+    public BaseMap CurrentMap = new BaseMap();
 
-    public Map(Player player)
+    public MapHandler(Player player)
     {
         Player = player;
         InitializeMapFromObject(new MapForest());
@@ -14,6 +15,7 @@ public class Map
     
     public void InitializeMapFromObject (BaseMap map)
     {
+        CurrentMap = map;
         SomeMapArray = new char[map.MapLineCount, map.MapCharCount];
         string[] someMapSplit = map.MapString.Split("\n");
         
@@ -62,5 +64,13 @@ public class Map
             }
             Console.WriteLine();
         }
+
+        DisplayNarrativeText();
+    }
+
+    private void DisplayNarrativeText()
+    {
+        Console.WriteLine();
+        Console.WriteLine(CurrentMap.MapStoryText);
     }
 }

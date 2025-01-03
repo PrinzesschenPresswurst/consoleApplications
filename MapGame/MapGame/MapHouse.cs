@@ -4,7 +4,8 @@ public class MapHouse : BaseMap
 {
     public MapHouse()
     {
-        PlayerStartPos  = new int[,] { {1, 1} };
+        PlayerStartPos  = new int[,] { {8, 9} };
+        MapStoryText = " On first glance you can see only two beds, nothing special...";
         MapString = """
                     ####################
                     #      [   ]       #

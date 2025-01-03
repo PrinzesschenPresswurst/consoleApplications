@@ -1,8 +1,8 @@
 ﻿namespace MapGame;
 
-public class PlayerInputHandler(Map map, Player player)
+public class PlayerInputHandler(MapHandler mapHandler, Player player)
 {
-    private Map Map { get; set; } = map;
+    private MapHandler MapHandler { get; set; } = mapHandler;
     private Player Player { get; set; } = player;
     
     int[,] direction = new int[,] { {0, 0} };
@@ -32,7 +32,7 @@ public class PlayerInputHandler(Map map, Player player)
             direction[0,0] = 1;
             direction[0,1] = 0;
         }
-        char target = Map.SomeMapArray[Player.PlayerPosition[0, 0] + direction[0, 0],
+        char target = MapHandler.SomeMapArray[Player.PlayerPosition[0, 0] + direction[0, 0],
             Player.PlayerPosition[0, 1] + direction[0, 1]];
         EvaluateAction(target);
     }
@@ -55,17 +55,17 @@ public class PlayerInputHandler(Map map, Player player)
 
     private void MovePlayer()
     {
-       Map.SomeMapArray[Player.PlayerPosition[0,0], Player.PlayerPosition[0,1]] = ' '; 
+       MapHandler.SomeMapArray[Player.PlayerPosition[0,0], Player.PlayerPosition[0,1]] = ' '; 
        Player.PlayerPosition[0, 0] += direction[0,0];
        Player.PlayerPosition[0, 1] += direction[0,1];
-       Map.DisplayMap();
+       MapHandler.DisplayMap();
     }
 
     private void EnterHouse()
     {
         Console.WriteLine("you enter the house");
-        Map.InitializeMapFromObject(new MapHouse());
-        Map.DisplayMap();
+        MapHandler.InitializeMapFromObject(new MapHouse());
+        MapHandler.DisplayMap();
         // load a new map
         // place new playerposition (maps should be objects with start pos per map?)
     }
