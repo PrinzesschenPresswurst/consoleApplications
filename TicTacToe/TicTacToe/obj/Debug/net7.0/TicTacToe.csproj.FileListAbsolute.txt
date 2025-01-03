@@ -12,3 +12,4 @@ C:\Repositories\CSharp_Exercises\consoleApplications\TicTacToe\TicTacToe\obj\Deb
 C:\Repositories\CSharp_Exercises\consoleApplications\TicTacToe\TicTacToe\obj\Debug\net7.0\TicTacToe.pdb
 C:\Repositories\CSharp_Exercises\consoleApplications\TicTacToe\TicTacToe\obj\Debug\net7.0\TicTacToe.genruntimeconfig.cache
 C:\Repositories\CSharp_Exercises\consoleApplications\TicTacToe\TicTacToe\obj\Debug\net7.0\ref\TicTacToe.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\TicTacToe\TicTacToe\obj\Debug\net7.0\TicTacToe.sourcelink.json

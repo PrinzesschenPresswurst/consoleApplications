@@ -10,15 +10,8 @@ public class MapHandler
     public MapHandler(Player player)
     {
         Player = player;
-        LinkUpMaps();
+        MapLinker.LinkUpMaps();
         InitializeMapFromObject(MapLinker.Forest);
-    }
-
-    private static void LinkUpMaps()
-    {
-       MapLinker.Forest.LinkMaps();
-       MapLinker.House.LinkMaps();
-       MapLinker.ForestWell.LinkMaps();
     }
     
     public void InitializeMapFromObject (BaseMap map)

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "aSC0Qpczio4PLWVJKl+L6ZPf40mfgGs/MWM7vAC8kZb6DW6TmMnBVigb5fQIvc1+Y8cszfOT9jwNyylhIad+Vw==",
+  "dgSpecHash": "HV63sbXpGo4=",
   "success": true,
   "projectFilePath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\TicTacToe\\TicTacToe\\TicTacToe.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

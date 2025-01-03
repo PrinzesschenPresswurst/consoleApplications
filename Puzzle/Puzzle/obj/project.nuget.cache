@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EbXq9w9EmoQ1gM7HbsRlZ5zY4MnoxjFLbvZZTe3/XVk2noMRZCWvYdCgBhtma0k6u7ZvY0dLG8m0lYgwITP8hw==",
+  "dgSpecHash": "BX3//iSDRyM=",
   "success": true,
   "projectFilePath": "C:\\Repositories\\CSharp_Exercises\\consoleApplications\\Puzzle\\Puzzle\\Puzzle.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\tinim\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

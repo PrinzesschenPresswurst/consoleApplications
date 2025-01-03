@@ -12,3 +12,4 @@ C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net
 C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.pdb
 C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.genruntimeconfig.cache
 C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\ref\Puzzle.dll
+C:\Repositories\CSharp_Exercises\consoleApplications\Puzzle\Puzzle\obj\Debug\net7.0\Puzzle.sourcelink.json
