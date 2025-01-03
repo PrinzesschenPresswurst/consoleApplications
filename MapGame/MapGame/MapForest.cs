@@ -14,14 +14,14 @@ public  class MapForest : BaseMap
                    #     |       |       |       |        #
                    #                                      #
                    #    E                      E          #
-                   #          _______                     #
-                   #         /       \                    #
+                   #          _______                     2
+                   #         /       \                    2
                    #        /         \                   #
                    #       +-----------+      ^       ^   #
                    #       |   [  ]    |     ^^^     ^^^  #
                    #       |    __     |      |       |   #
                    #       |   |  |    |                  #
-                   #       |___|XX|____|                  #
+                   #       |___|11|____|                  #
                    #                                      #
                    #     ^       ^                        #
                    #    ^^^     ^^^                       #
@@ -32,6 +32,8 @@ public  class MapForest : BaseMap
        string[] test = MapString.Split("\n");
        MapCharCount = test[0].Length;
        MapLineCount = test.Length;
+       MapToGoTo1 = null;
+       MapToGoTo2 = null;
     }
     
 }

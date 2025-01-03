@@ -1,8 +1,8 @@
 ﻿namespace MapGame;
 
-public class MapHouse : BaseMap
+public class MapHouse2 : BaseMap
 {
-    public MapHouse()
+    public MapHouse2()
     {
         PlayerStartPos  = new int[,] { {8, 9} };
         MapStoryText = " On first glance you can see only two beds, nothing special...";
@@ -10,12 +10,12 @@ public class MapHouse : BaseMap
                     ####################
                     #      [   ]       #
                     #                  #
-                    #  +----+  +----+  #
-                    #  |    |  |    |  #
-                    #  |____|  |____|  #
+                    #  +----+          #
+                    #  |    |          #
+                    #  |____|          #
                     #                  #
-                    #   ____    ____   #
-                    #  |____|  |____|  #
+                    #           ____   #
+                    #          |____|  #
                     #########11##########
                     """;
         string[] test = MapString.Split("\n");

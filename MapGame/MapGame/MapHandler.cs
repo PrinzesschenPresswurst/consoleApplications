@@ -4,13 +4,29 @@ namespace MapGame;
 public class MapHandler
 {
     private Player Player { get; set; }
-    public char[,] SomeMapArray { get; private set; }
+    public char[,] SomeMapArray { get; private set; } = null;
     public BaseMap CurrentMap = new BaseMap();
-
+    private readonly BaseMap _forest = new MapForest();
+    private readonly BaseMap _house = new MapHouse();
+    private readonly BaseMap _forest2 = new MapForest2();
+    private readonly BaseMap _house2 = new MapHouse2();
+    
+    
     public MapHandler(Player player)
     {
         Player = player;
-        InitializeMapFromObject(new MapForest());
+        LinkUpMaps();
+        InitializeMapFromObject(_forest);
+    }
+
+    private void LinkUpMaps()
+    {
+        _forest.MapToGoTo1 = _house;
+        _forest.MapToGoTo2 = _forest2;
+        _house.MapToGoTo1 = _forest;
+        _house2.MapToGoTo1 = _forest2;
+        _forest2.MapToGoTo1 = _house;
+        _forest2.MapToGoTo2 = _forest;
     }
     
     public void InitializeMapFromObject (BaseMap map)
@@ -34,7 +50,6 @@ public class MapHandler
                 SomeMapArray[i, j] = subSplit[j];
             }
         }
-
         Player.PlayerPosition = map.PlayerStartPos;
     }
     
@@ -55,16 +70,27 @@ public class MapHandler
             for (int j = 0; j < SomeMapArray.GetLength(1); j++)
             {
                 if (SomeMapArray[i, j] == 'E')
+                {
                     Console.ForegroundColor = ConsoleColor.Red;
-                if (SomeMapArray[i, j] == 'X')
+                    Console.Write(SomeMapArray[i,j]);
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                    
+                else if (SomeMapArray[i, j] == '1'|| SomeMapArray[i, j] == '2')
+                {
                     Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write('X');
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+
+                else
+                {
+                    Console.Write(SomeMapArray[i,j]);
+                }
                 
-                Console.Write(SomeMapArray[i,j]);
-                Console.ForegroundColor = ConsoleColor.White;
             }
             Console.WriteLine();
         }
-
         DisplayNarrativeText();
     }
 
