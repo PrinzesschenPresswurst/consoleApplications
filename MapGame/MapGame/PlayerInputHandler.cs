@@ -10,6 +10,9 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
     public void ListenToInput()
     {
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+        // Default: Reset _direction to no movement
+        _direction[0, 0] = 0;
+        _direction[0, 1] = 0;
         
         if (keyInfo.Key == ConsoleKey.LeftArrow)
         {
@@ -31,12 +34,14 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
             _direction[0,0] = 1;
             _direction[0,1] = 0;
         }
+
+        int[,] targetPostion = { { Player.PlayerPosition[0, 0] + _direction[0, 0], Player.PlayerPosition[0, 1] + _direction[0, 1] } };
         char target = MapHandler.SomeMapArray[Player.PlayerPosition[0, 0] + _direction[0, 0],
             Player.PlayerPosition[0, 1] + _direction[0, 1]];
-        EvaluateAction(target);
+        EvaluateAction(target, targetPostion);
     }
 
-    private void EvaluateAction(char target)
+    private void EvaluateAction(char target, int[,]targetPosition)
     {
         switch (target)
         {
@@ -48,7 +53,7 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
                 SwitchMap(target);
                 break;
             case 'E':
-                Console.WriteLine("you engage in combat");
+                StartCombat(targetPosition);
                 break;
         }
     }
@@ -72,6 +77,17 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
                 MapHandler.InitializeMapFromObject(MapHandler.CurrentMap.MapToGoTo2);
                 break;
         }
+        MapHandler.DisplayMap();
+    }
+
+    private void StartCombat(int [,]targetPosition)
+    {
+        Combat combat = new Combat();
+        combat.RunCombat();
+        Console.WriteLine("game won: " + combat.PlayerWonGame);
+        if (combat.PlayerWonGame)
+            MapHandler.SomeMapArray[targetPosition[0,0],targetPosition[0,1]] = ' ';
+           
         MapHandler.DisplayMap();
     }
 }                   

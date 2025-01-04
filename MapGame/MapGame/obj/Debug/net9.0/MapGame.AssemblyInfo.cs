@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MapGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+474e9e3cf313ac39393e4f53373b30b55b64d710")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d1a59b740b1bde3c2666151b9b8e8ad6909c68e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MapGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MapGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
