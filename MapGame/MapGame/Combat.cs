@@ -31,9 +31,6 @@ public class Combat
     private void DisplayRoundResult()
     {
         DisplayCombatWindow();
-        
-        //CombatDisplay.DisplayPlayerHand(PlayerHand);
-        //CombatDisplay.DisplayEnemyHand(EnemyHand);
         CombatDisplay.DisplayBothHands(PlayerHand, EnemyHand);
         Console.WriteLine("Your Hand: " + PlayerHand);
         Console.WriteLine("Enemy Hand: " + EnemyHand);
