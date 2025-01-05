@@ -32,13 +32,18 @@ public class Combat
     {
         DisplayCombatWindow();
         CombatDisplay.DisplayBothHands(PlayerHand, EnemyHand);
-        Console.WriteLine("Your Hand: " + PlayerHand);
-        Console.WriteLine("Enemy Hand: " + EnemyHand);
 
         if (RoundResult == Result.EnemyWins)
+        {
             Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(EnemyHand + " beats " + PlayerHand);
+        }
+            
         else if (RoundResult == Result.PlayerWins)
+        {
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(PlayerHand + " beats " + EnemyHand);
+        }
         
         Console.WriteLine("Result: " + RoundResult);
         Console.ForegroundColor = ConsoleColor.White;

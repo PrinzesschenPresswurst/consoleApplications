@@ -38,11 +38,14 @@ public static class CombatDisplay
         List<string> enemyHandList = enemyHandString.Split(['\n', '\r'],StringSplitOptions.RemoveEmptyEntries).ToList();
         enemyHandList = FlipList(enemyHandList);
         
-        
+        Console.WriteLine();
+        Console.WriteLine("       Your hand       --       Enemy hand       ");
+        Console.WriteLine();
         for (int i = 0; i < playerHandList.Count; i++)
         {
             Console.WriteLine(playerHandList[i] + "   " + enemyHandList[i]);
         }
+        Console.WriteLine();
     }
     
     private static string GetString(Combat.RpsHand hand)
