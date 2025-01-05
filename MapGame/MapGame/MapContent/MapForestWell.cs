@@ -29,9 +29,7 @@ public class MapForestWell : BaseMap
                     #                                      #
                     #########################################
                     """;
-        string[] test = MapString.Split("\n");
-        MapCharCount = test[0].Length;
-        MapLineCount = test.Length;
+        InitializeMapArray();
     }
     public override void LinkMaps()
     {

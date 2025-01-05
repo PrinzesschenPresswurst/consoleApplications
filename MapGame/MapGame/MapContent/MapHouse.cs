@@ -18,11 +18,7 @@ public class MapHouse : BaseMap
                     #  |____|  |____|  #
                     #########11##########
                     """;
-        string[] test = MapString.Split("\n");
-        foreach (string s in test)
-            Console.WriteLine(s.Length);
-        MapCharCount = test[0].Length;
-        MapLineCount = test.Length;
+        InitializeMapArray();
     }
     
     public override void LinkMaps()

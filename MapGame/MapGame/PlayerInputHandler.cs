@@ -35,10 +35,10 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
             _direction[0,1] = 0;
         }
 
-        int[,] targetPostion = { { Player.PlayerPosition[0, 0] + _direction[0, 0], Player.PlayerPosition[0, 1] + _direction[0, 1] } };
-        char target = MapHandler.SomeMapArray[Player.PlayerPosition[0, 0] + _direction[0, 0],
+        int[,] targetPosition = { { Player.PlayerPosition[0, 0] + _direction[0, 0], Player.PlayerPosition[0, 1] + _direction[0, 1] } };
+        char target = MapHandler.CurrentMap.MapArray[Player.PlayerPosition[0, 0] + _direction[0, 0],
             Player.PlayerPosition[0, 1] + _direction[0, 1]];
-        EvaluateAction(target, targetPostion);
+        EvaluateAction(target, targetPosition);
     }
 
     private void EvaluateAction(char target, int[,]targetPosition)
@@ -60,7 +60,7 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
 
     private void MovePlayer()
     {
-       MapHandler.SomeMapArray[Player.PlayerPosition[0,0], Player.PlayerPosition[0,1]] = ' '; 
+       MapHandler.CurrentMap.MapArray[Player.PlayerPosition[0,0], Player.PlayerPosition[0,1]] = ' '; 
        Player.PlayerPosition[0, 0] += _direction[0,0];
        Player.PlayerPosition[0, 1] += _direction[0,1];
        MapHandler.DisplayMap();
@@ -71,10 +71,10 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
         switch (target)
         {
             case '1' when MapHandler.CurrentMap.MapToGoTo1 != null:
-                MapHandler.InitializeMapFromObject(MapHandler.CurrentMap.MapToGoTo1);
+               MapHandler.InitializeMap(MapHandler.CurrentMap.MapToGoTo1);
                 break;
             case '2' when MapHandler.CurrentMap.MapToGoTo2 != null:
-                MapHandler.InitializeMapFromObject(MapHandler.CurrentMap.MapToGoTo2);
+              MapHandler.InitializeMap(MapHandler.CurrentMap.MapToGoTo2);
                 break;
         }
         MapHandler.DisplayMap();
@@ -86,7 +86,7 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
         combat.RunCombat();
         Console.WriteLine("game won: " + combat.PlayerWonGame);
         if (combat.PlayerWonGame)
-            MapHandler.SomeMapArray[targetPosition[0,0],targetPosition[0,1]] = ' ';
+            MapHandler.CurrentMap.MapArray[targetPosition[0,0],targetPosition[0,1]] = ' ';
            
         MapHandler.DisplayMap();
     }
