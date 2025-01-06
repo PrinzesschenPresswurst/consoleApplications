@@ -1,8 +1,8 @@
 ﻿namespace MapGame;
 
-public class PlayerInputHandler(MapHandler mapHandler, Player player)
+public class PlayerInputHandler(GameStateHandler gameStateHandler, Player player)
 {
-    private MapHandler MapHandler { get; set; } = mapHandler;
+    private GameStateHandler GameStateHandler { get; set; } = gameStateHandler;
     private Player Player { get; set; } = player;
     
     private readonly int[,] _direction = new int[,] { {0, 0} };
@@ -36,7 +36,7 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
         }
 
         int[,] targetPosition = { { Player.PlayerPosition[0, 0] + _direction[0, 0], Player.PlayerPosition[0, 1] + _direction[0, 1] } };
-        char target = MapHandler.CurrentMap.MapArray[Player.PlayerPosition[0, 0] + _direction[0, 0],
+        char target = GameStateHandler.CurrentMap.MapArray[Player.PlayerPosition[0, 0] + _direction[0, 0],
             Player.PlayerPosition[0, 1] + _direction[0, 1]];
         EvaluateAction(target, targetPosition);
     }
@@ -53,41 +53,44 @@ public class PlayerInputHandler(MapHandler mapHandler, Player player)
                 SwitchMap(target);
                 break;
             case 'E':
-                StartCombat(targetPosition);
+                HandleCombat(targetPosition);
                 break;
         }
     }
 
     private void MovePlayer()
     {
-       MapHandler.CurrentMap.MapArray[Player.PlayerPosition[0,0], Player.PlayerPosition[0,1]] = ' '; 
+       GameStateHandler.CurrentMap.MapArray[Player.PlayerPosition[0,0], Player.PlayerPosition[0,1]] = ' '; 
        Player.PlayerPosition[0, 0] += _direction[0,0];
        Player.PlayerPosition[0, 1] += _direction[0,1];
-       MapHandler.DisplayMap();
+       GameStateHandler.DisplayGame();
     }
 
     private void SwitchMap(char target)
     {
         switch (target)
         {
-            case '1' when MapHandler.CurrentMap.MapToGoTo1 != null:
-               MapHandler.InitializeMap(MapHandler.CurrentMap.MapToGoTo1);
+            case '1' when GameStateHandler.CurrentMap.MapToGoTo1 != null:
+               GameStateHandler.InitializeMap(GameStateHandler.CurrentMap.MapToGoTo1);
                 break;
-            case '2' when MapHandler.CurrentMap.MapToGoTo2 != null:
-              MapHandler.InitializeMap(MapHandler.CurrentMap.MapToGoTo2);
+            case '2' when GameStateHandler.CurrentMap.MapToGoTo2 != null:
+              GameStateHandler.InitializeMap(GameStateHandler.CurrentMap.MapToGoTo2);
                 break;
         }
-        MapHandler.DisplayMap();
+        GameStateHandler.DisplayGame();
     }
 
-    private void StartCombat(int [,]targetPosition)
+    private void HandleCombat(int [,]targetPosition)
     {
         Combat combat = new Combat();
         combat.RunCombat();
-        Console.WriteLine("game won: " + combat.PlayerWonGame);
+        
         if (combat.PlayerWonGame)
-            MapHandler.CurrentMap.MapArray[targetPosition[0,0],targetPosition[0,1]] = ' ';
+            GameStateHandler.CurrentMap.MapArray[targetPosition[0,0],targetPosition[0,1]] = ' ';
+
+        if (!combat.PlayerWonGame)
+            Player.PlayerHealth--;
            
-        MapHandler.DisplayMap();
+        GameStateHandler.DisplayGame();
     }
 }                   

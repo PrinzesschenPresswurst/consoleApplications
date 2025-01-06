@@ -50,20 +50,19 @@ public class Combat
     }
     private void DisplayGameResult()
     {
-        if (PlayerWins == 3)
+        if (PlayerWins >= 3)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("you won. the enemy is dead.");
             PlayerWonGame = true;
         }
             
-        else if (EnemyWins == 3)
+        else if (EnemyWins >= 3)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("you lost. you loose 1 HP.");
             PlayerWonGame = false;
         }
-
         Console.ForegroundColor = ConsoleColor.White;
         Console.ReadKey();
     }
@@ -86,7 +85,8 @@ public class Combat
         do
         {
             Console.WriteLine("Choose 1) Rock, 2) Paper, 3) Scissor.");
-            if (int.TryParse(Console.ReadLine(), out int i))
+            string? answer = Console.ReadLine();
+            if (int.TryParse(answer, out int i))
             {
                 switch (i)
                 {
@@ -97,8 +97,18 @@ public class Combat
                     case 3:
                         return RpsHand.Scissor;
                     default:
-                        break;
+                        continue;
                 }
+            }
+            switch (answer) // ToDo: cheats - get rid
+            {
+                case "w":
+                    PlayerWins = 3;
+                    return RpsHand.Paper;
+                case "l":
+                    EnemyWins = 3;
+                    return RpsHand.Paper;
+                default: break;
             }
         } while (true);
     }
@@ -122,7 +132,7 @@ public class Combat
 
     private bool CheckIfGameIsOver()
     {
-        if (PlayerWins == 3 || EnemyWins == 3)
+        if (PlayerWins >= 3 || EnemyWins >= 3)
             return true;
         else return false;
     }
