@@ -77,6 +77,7 @@ public class PlayerInputHandler(GameStateHandler gameStateHandler, Player player
               GameStateHandler.InitializeMap(GameStateHandler.CurrentMap.MapToGoTo2);
                 break;
         }
+        Console.Clear();
         GameStateHandler.DisplayGame();
     }
 

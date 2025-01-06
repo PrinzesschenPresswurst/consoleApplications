@@ -65,6 +65,7 @@ public class Combat
         }
         Console.ForegroundColor = ConsoleColor.White;
         Console.ReadKey();
+        Console.Clear();
     }
 
     private void DisplayCombatWindow()

@@ -25,13 +25,14 @@ public class GameStateHandler
 
     public void DisplayGame()
     {
-        Console.Clear();
-        
+        Console.SetCursorPosition(0, 0); 
+        Console.CursorVisible = false; // hide weirdo flickering
         DisplayHud();
         DisplayMap();
         DisplayNarrativeText();
+        Console.CursorVisible = true;
     }
-
+    
     private void DisplayMap()
     {
         PlacePlayer();
