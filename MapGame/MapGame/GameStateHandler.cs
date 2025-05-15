@@ -9,7 +9,7 @@ public class GameStateHandler
     {
         Player = player;
         MapLinker.LinkUpMaps();
-        InitializeMap(MapLinker.Forest);
+        InitializeMap(MapLinker.Beach);
     }
     
     public void InitializeMap (BaseMap map)

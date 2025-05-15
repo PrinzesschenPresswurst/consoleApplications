@@ -1,4 +1,6 @@
-﻿namespace MapGame;
+﻿using MapGame.Exercises;
+
+namespace MapGame;
 
 public class PlayerInputHandler(GameStateHandler gameStateHandler, Player player)
 {
@@ -55,6 +57,10 @@ public class PlayerInputHandler(GameStateHandler gameStateHandler, Player player
             case 'E':
                 HandleCombat(targetPosition);
                 break;
+            case 'P':
+                HandleInteraction();
+                break;
+                
         }
     }
 
@@ -92,6 +98,12 @@ public class PlayerInputHandler(GameStateHandler gameStateHandler, Player player
         if (!combat.PlayerWonGame)
             Player.PlayerHealth--;
            
+        GameStateHandler.DisplayGame();
+    }
+
+    private void HandleInteraction()
+    {
+        GameStateHandler.CurrentMap.Interaction();
         GameStateHandler.DisplayGame();
     }
 }                   

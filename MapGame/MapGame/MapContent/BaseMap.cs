@@ -12,7 +12,9 @@ public class BaseMap
     public BaseMap? MapToGoTo2 { get; protected set; } = null;
     
     public virtual void LinkMaps() { }
-    
+
+    public virtual void Interaction() { }
+
     protected void InitializeMapArray()
     {
         InitializeArraySize();
